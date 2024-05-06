@@ -1,0 +1,136 @@
+@charset "utf-8";
+
+
+body {
+    width: 430px;
+    font-family: "Noto Sans JP";
+    padding: 20px;
+    background-color: #cecbc6;
+    color: #0e026e;
+}
+
+.line {
+    width: 100%;
+    height: 11px;
+    display: block;
+    position: relative;
+    border-bottom: solid 2px #0e026e;
+}
+.title {
+    width: 390px;
+    margin-top: 20px;
+    display: flex;
+    justify-content:space-between;
+}
+
+
+h3 {
+    font-family: "HappyGoheung";
+    margin-top: 20px;
+    font-size: 50px;
+    line-height: 10px;
+    vertical-align:text-bottom;
+}
+
+
+.input {
+    margin: 2px 0;
+
+}
+input {
+    background-color: #eee;
+    color: #0e026e;
+}
+
+.deleteButton {
+    font-family: "HappyGoheung";
+    opacity: 0;
+    transition: 0.3s;
+}
+
+#wordList {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-bottom: 20px;
+}
+#wordList > div {
+    width: 390px;
+    height: 40px;
+    transition: 0.3s;
+}
+
+#wordList > div:hover {
+    background-color: #0e026e;
+    color: #cecbc6;
+}
+
+#wordList > div:hover .deleteButton {
+    opacity: 1;
+}
+
+#wordList > div > span {
+    display: inline-block;
+    user-select:text;
+    line-height: 40px;
+}
+.word {
+    font-family: "Noto Sans KR";
+    padding: 0 6px;
+    width: 200px;
+}
+.mean {
+    width: 166px;
+}
+
+
+
+
+
+@keyframes poyon {
+  0%  { transform: scale(1)         rotate(0deg)  }
+  40% { transform: scale(1.1, .9)   rotate(5deg)  }
+  70% { transform: scale(.9, 1.1)   rotate(-3deg) }
+  80% { transform: scale(1.05, .95) rotate(1deg)  }
+  to  { transform: scale(1)         rotate(0deg)  }
+}
+
+.check {
+    position: fixed;
+    top: 34px;
+    left: 80px;
+}
+
+label {
+    display: block;
+    width: 80px;
+    height: 50px;
+    text-align: center;
+    line-height:60px;
+}
+
+.check label {
+  display: inline-block;
+  transition-delay: .1s;
+}
+
+.check label::before {
+  font-family: 'FontAwesome';
+  content: '\f08a';
+  color: #0e026e;
+  font-size: 1.1em;
+}
+
+.check > input {
+  display: none
+}
+
+input:checked + label {
+  transition-delay: 0s;
+  animation-name: poyon;
+  animation-duration: .3s;
+  animation-timing-function: ease
+}
+
+input:checked ~ label::before {
+  content: '\f004';
+}
