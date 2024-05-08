@@ -1,53 +1,32 @@
-
+<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>title</title>
-    <meta name="description"content="検索したときに表示される説明文的なやつ">
+    <title>単語</title>
+    <meta name="description"content="単語">
     <!-- フォント -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Noto+Serif+KR&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
-    <!-- アイコン -->
-    <script src="https://kit.fontawesome.com/8a7c2d361f.js" crossorigin="anonymous"></script>
     <!-- css -->
-    <link rel="stylesheet" href="D:/script/assets/css/sanitize.css">
-    <link rel="stylesheet" href="D:/script/assets/css/initial.css">
+    <link rel="stylesheet" href="./assets/sanitize.css">
     <link rel="stylesheet" href="./style.css">
-    
 </head>
 <body>
 
 
 
-<div id="tango">
+<header>＜　一覧</header>
 
-
-
-    <div class="title">
-        <h3>단어장</h3>
-        <div class="check">
-            <input type='checkbox' id='check' checked>
-            <label for='check'></label>
-        </div>
-        <span id="total"></span>
-    </div>
-
-    <div class="input">
-        <input type="text" id="word" placeholder='単語'>
-        <input type="text" id="mean" placeholder='意味'>
-    </div>
-
-    <div id="wordList"></div>
-    <!--<span class="word">単語</span>
-    <span class="mean">意味</span>
-    <button class="deleteButton">×</button>-->
-
-
-    
+<div class="tango">
+    <div id="hng">한국</div>
+    <div id="jpn">表示</div>
 </div>
 
+<div class="btn">
+    <div id="wrong">×</div>
+    <div id="right">〇</div>
+</div>
 
 
 
@@ -57,5 +36,7 @@
 <script src="./app.js"></script>
 </body>
 </html>
+
+
 
 
