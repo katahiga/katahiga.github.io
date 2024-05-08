@@ -1,98 +1,58 @@
 
+const right = document.getElementById('right');
+const wrong = document.getElementById('wrong');
+const hng = document.getElementById('hng');
+const jpn = document.getElementById('jpn');
+const btn = document.querySelector('.btn');
 
-document.addEventListener("DOMContentLoaded", function() {
-    loadWords();
 
-    // 読み上げ
-    const divs = document.querySelectorAll('#wordList > div');
-    divs.forEach(function(div) {
-        div.addEventListener('click', function() {
-            const play = div.querySelector('.word').textContent;
-            const uttr = new SpeechSynthesisUtterance(play);
-            uttr.lang = 'ko-KR';
-            speechSynthesis.speak(uttr);
-        });
-    });
-    
+right.addEventListener('click', clicksound);
+hng.addEventListener('click', function () {
+    Reading(hng.textContent);
 });
 
-// Enterで登録
-mean.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') registration();});
-word.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') registration();});
-
-
-function registration() {
-    const wordval = word.value;
-    const meanval = mean.value;
-
-    if (wordval === '' || meanval === '') return;
-
-    addWord(wordval, meanval);
-    saveWords();
-
-    word.value = '';
-    mean.value = '';
+// クリック音
+function clicksound() {
+    const audio = new Audio('./assets/click.mp3')
+    audio.currentTime = 0;
+    audio.play();
+}
+// 読み上げ
+function Reading(text) {
+    const uttr = new SpeechSynthesisUtterance(text);
+    uttr.lang = 'ko-KR';
+    speechSynthesis.speak(uttr);
 }
 
-// 単語をリストに追加
-function addWord(wordval, meanval) {
-    const listItem = document.createElement("div");
-    listItem.innerHTML = '<span class="word">' + wordval + '</span><span class="mean">' + meanval + '</span> <button class="deleteButton">×</button>';
-    wordList.appendChild(listItem);
 
-    const totalval = total.textContent.replace(/[^0-9]/g, '');
-    const totalnow = parseInt(totalval) + 1;
-    total.textContent = "total：" + totalnow;
+const words = [{KR:'한국',JP:'ぜろ'},{KR:'1',JP:'いち'},{KR:'2',JP:'に'},{KR:'3',JP:'さん'},{KR:'4',JP:'よん'},{KR:'5',JP:'ご'}]
 
-    // 削除ボタン
-    const deleteButton = listItem.querySelector(".deleteButton");
-    deleteButton.addEventListener("click", function() {
-        listItem.remove();
-        saveWords();
-    
-        const totalval = total.textContent.replace(/[^0-9]/g, '');
-        const totalnow = parseInt(totalval) - 1;
-        total.textContent = "total：" + totalnow;
-    });
-}
-
-// 単語sをローカルに保存
-function saveWords() {
-    let words = [];
-    let listItems = document.querySelectorAll("#wordList div");
-    listItems.forEach(function(item) {
-        let word = item.querySelector(".word").textContent;
-        let mean = item.querySelector(".mean").textContent;
-        words.push({ word: word, mean: mean });
-    });
-    localStorage.setItem("words", JSON.stringify(words));
-}
-
-// 単語sをローカルから読み込み
-function loadWords() {
-    let wordsString = localStorage.getItem("words");
-    if (wordsString) {
-        let words = JSON.parse(wordsString);
-        words.forEach(function(word) {
-            addWord(word.word, word.mean);
-        });
-
-        total.textContent = "total：" + words.length;
-    }
-}
-
-// チェックされたら非表示
-check.addEventListener('change', function() {
-    const means = document.querySelectorAll('.mean');
-    if (check.checked) {    
-        means.forEach((val) => {
-            val.style.opacity = '1';
-        });
-    }else {
-        means.forEach((val) => {
-            val.style.opacity = '0';
-        });
-    }
+let index = 0;
+hng.textContent = words[index].KR;
+jpn.addEventListener('click', function() {
+    jpn.textContent = words[index].JP;
 });
+
+function order() {
+    index = (index + 1) % words.length;
+    hng.textContent = words[index].KR;
+    Reading(hng.textContent);
+    jpn.textContent = words[index].JP;
+    jpn.textContent = "表示";
+
+    if (this === right && words.length > 0) {
+        words.splice(index-1 , 1);
+        index--;
+        index = index < 0 ? 0 : index;
+    }
+
+    if (words.length === 0) {
+        hng.textContent = "완료";
+        jpn.textContent = "";
+        btn.style.display = 'none';
+    }
+}
+right.addEventListener('click', order);
+wrong.addEventListener('click', order);
+
+
