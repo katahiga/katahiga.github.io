@@ -5,7 +5,6 @@ const hng = document.getElementById('hng');
 const jpn = document.getElementById('jpn');
 const btn = document.querySelector('.btn');
 
-
 right.addEventListener('click', clicksound);
 hng.addEventListener('click', function () {
     Reading(hng.textContent);
