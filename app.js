@@ -1,5 +1,4 @@
 
-
 const words1 = [
     {KR:'도전',JP:'挑戦'},
     {KR:'끈',JP:'紐'},
@@ -157,3 +156,5 @@ mk.addEventListener('click', function() {
     thisWords = words2;
     init(thisWords);
 });
+
+
