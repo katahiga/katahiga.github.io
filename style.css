@@ -1,0 +1,88 @@
+@charset "utf-8";
+
+body {
+    font-family: 'Noto Sans JP';
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+    background-color: black;
+    color: #eee;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.5;
+    box-sizing: border-box;
+    user-select: none;
+    cursor: default;
+    overflow: hidden;
+    background: url("./assets/bg.jpg") no-repeat center;
+    background-size: cover;
+}
+body::-webkit-scrollbar{
+  display:none;
+}
+
+#disp {
+    font-family: "Roboto";
+    margin: 0;
+    text-align: right;
+}
+
+body > div {
+    margin: 10px 0;
+    text-align: center;
+}
+.tango {
+    height: 150px;
+    margin-top: 140px;
+    background: rgba(125, 125, 125, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.5);
+}
+#hng {
+    font-family: 'Noto Sans KR';
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 90px;
+    border-bottom: solid #eee 1px;
+    margin: 0 10px;
+}
+#jpn {
+    line-height: 60px;
+    font-weight: 400;
+}
+
+.btn {
+    display: flex;
+}
+
+.btn > div {
+    width: 50%;
+    text-align: center;
+    line-height: 80px;
+}
+
+.itiran {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+}
+input {
+    display: none;
+}
+label {
+    display: inline-block;
+    width: 90px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 20px;
+}
+input:checked + label {
+    background: rgba(125, 125, 125, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.5);
+}
