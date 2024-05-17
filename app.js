@@ -1,77 +1,69 @@
 
 const words1 = [
-    {KR:'도전',JP:'挑戦'},
-    {KR:'끈',JP:'紐'},
-    {KR:'듣다',JP:'効く'},
-    {KR:'동안',JP:'間'},
-    {KR:'눈을 뜨다',JP:'目を開ける'},
-    {KR:'눈을 감다',JP:'目を閉じる'},
-    {KR:'눈을 돌리다',JP:'目をそらす'},
-    {KR:'놔두다',JP:'置いとく'},
-    {KR:'당황스럽다',JP:'うろたえる'},
-    {KR:'떨어지다',JP:'落ちる'},
-    {KR:'망했다',JP:'終わった、詰んだ'},
-    {KR:'당했다',JP:'やられた'},
-    {KR:'아찔하다',JP:'危ない'},
-    {KR:'정획히',JP:'ぴったり'},
-    {KR:'치우다',JP:'どける、取り除く'},
-    {KR:'주실수 있을까요',JP:'いただけますか'},
+    {KR:'자연',JP:'自然'},
+    {KR:'치다',JP:'打つ'},
+    {KR:'누르다',JP:'押す'},
+    {KR:'만약',JP:'もし'},
+    {KR:'띠',JP:'帯'},
+    {KR:'예를 들면',JP:'例えば'},
+    {KR:'편',JP:'ほう'},
+    {KR:'흩어져',JP:'散らばる'},
+    {KR:'원하',JP:'願う'},
+    {KR:'데',JP:'所'},
+    {KR:'면서',JP:'ながら'},
+    {KR:'배워',JP:'習う'},
+    {KR:'음료수',JP:'飲料水'},
+    {KR:'세다',JP:'強い、きつい'},
+    {KR:'당연',JP:'当然'},
+    {KR:'알려',JP:'知らせる'},
+    {KR:'깝죽대다',JP:'そそっかしく'},
+    {KR:'낮춰',JP:'下げる'},
+    {KR:'애초',JP:'最初'},
+    {KR:'자체',JP:'自体'},
+    {KR:'아래',JP:'下げる'},
+    {KR:'꽂다',JP:'差し込む'},
+    {KR:'넣어',JP:'入れる'},
+    {KR:'뻔해',JP:'ところだった'},
+    {KR:'미음대로',JP:'勝手に'},
+    {KR:'실수',JP:'失敗'},
+    {KR:'살살해',JP:'優しく、手加減する'},
+    {KR:'얍삽해',JP:'ずるい'},
+    {KR:'갖다',JP:'持つ　가지다'},
+    {KR:'집중',JP:'集中'},
     {KR:'정도',JP:'程度'},
-    {KR:'완숙',JP:'完熟'},
-    {KR:'쏟아지다',JP:'こぼれる'},
-    {KR:'탱글탱글',JP:'ぷりぷり'},
+    {KR:'신중',JP:'慎重'},
+    {KR:'살짝',JP:'こっそり'},
+    {KR:'기회',JP:'機械、チャンス'},
+    {KR:'촬영',JP:'撮影'},
+    {KR:'중요',JP:'重要'},
+    {KR:'아쉽다',JP:'残念だ'},
+    {KR:'맞히다',JP:'当てる'},
+    {KR:'멀다',JP:'遠い'},
+    {KR:'가깝다',JP:'近い'},
+    {KR:'의문',JP:'疑問'},
+    {KR:'놓쳐',JP:'逃す'},
+    {KR:'따위',JP:'なんて'},
+    {KR:'주황색',JP:'オレンジ'},
+    {KR:'신기술',JP:'新技術'},
+    {KR:'박제',JP:'恥ずかしい行為'},
+    {KR:'추하',JP:'みっともない'},
+    {KR:'얇게',JP:'薄く'},
+    {KR:'볓 바퀴',JP:'何周'},
+    {KR:'벌써',JP:'すでに'},
+    {KR:'어떻게든',JP:'どうにかして'},
+    {KR:'보라색',JP:'紫'},
+    {KR:'보내다',JP:'送る'},
+    {KR:'거봐',JP:'ほら'},
+    {KR:'놔두',JP:'おいとく'},
+    {KR:'깔끔해',JP:'さっぱり'},
+    {KR:'줄',JP:'こと'},
+    {KR:'조용히',JP:'静かに'},
+    {KR:'권한',JP:'権限'},
+    {KR:'테',JP:'はず'},
+    {KR:'대신',JP:'代わり'},
 ]
 
 const words2 = [
-    {KR:'질투 심해',JP:'嫉妬深い'},
-    {KR:'넓은',JP:'広い'},
-    {KR:'가지고',JP:'ので'},
-    {KR:'수정',JP:'修正'},
-    {KR:'금방',JP:'たった今'},
-    {KR:'찰영',JP:'撮影'},
-    {KR:'안아',JP:'抱く'},
-    {KR:'비상사태',JP:'非常事態'},
-    {KR:'확',JP:'ぱっと'},
-    {KR:'다치다',JP:'怪我する'},
-    {KR:'아예',JP:'ハナから'},
-    {KR:'등을 돌리다',JP:'背を向ける'},
-    {KR:'살포시',JP:'そっと'},
-    {KR:'바로',JP:'すぐ'},
-    {KR:'넘어가다',JP:'過ぎる'},
-    {KR:'스러워',JP:'な感じ、ぽい'},
-    {KR:'진',JP:'～くなった'},
-    {KR:'모습',JP:'姿'},
-    {KR:'가성',JP:'裏声'},
-    {KR:'그런데',JP:'なのに'},
-    {KR:'안무',JP:'振付'},
-    {KR:'똑',JP:'ぴったっと'},
-    {KR:'체념해',JP:'諦める'},
-    {KR:'듯이',JP:'ように'},
-    {KR:'절규',JP:'絶叫'},
-    {KR:'답게',JP:'らしく'},
-    {KR:'표현',JP:'表現'},
-    {KR:'때마다',JP:'たびに'},
-    {KR:'부담',JP:'負担'},
-    {KR:'주문',JP:'呪文'},
-    {KR:'외워',JP:'覚える'},
-    {KR:'운전',JP:'運転'},
-    {KR:'유리',JP:'ガラス'},
-    {KR:'깨부수다',JP:'砕く'},
-    {KR:'만화',JP:'漫画'},
-    {KR:'돌진',JP:'突進'},
-    {KR:'향해',JP:'向かう'},
-    {KR:'찾아가다',JP:'訪ねに行く'},
-    {KR:'동작',JP:'動作'},
-    {KR:'단순',JP:'単純'},
-    {KR:'선',JP:'線'},
-    {KR:'이어지다',JP:'続く'},
-    {KR:'강조',JP:'強調'},
-    {KR:'사료',JP:'餌'},
-    {KR:'모래',JP:'砂'},
-    {KR:'장난감',JP:'おもちゃ'},
-    {KR:'느끼게 해',JP:'感じさせる'},
-    {KR:'자식',JP:'子'},
-    {KR:'끊임없이',JP:'絶え間なく'},
 ]
 
 
@@ -81,8 +73,8 @@ const hng = document.getElementById('hng');
 const jpn = document.getElementById('jpn');
 const btn = document.querySelector('.btn');
 const disp = document.getElementById('disp');
-const nyan = document.getElementById('nyan');
-const mk = document.getElementById('mk');
+const wd1 = document.getElementById('wd1');
+const wd2 = document.getElementById('wd2');
 
 let index = 0;
 let thisWords = words1;
@@ -148,11 +140,11 @@ wrong.addEventListener('click', function() {
     order(thisWords, 'wrong');
 });
 
-nyan.addEventListener('click', function() {
+wd1.addEventListener('click', function() {
     thisWords = words1;
     init(thisWords);
 });
-mk.addEventListener('click', function() {
+wd2.addEventListener('click', function() {
     thisWords = words2;
     init(thisWords);
 });
